@@ -32,14 +32,16 @@ public class FlightController {
 		FlightModel flight = new FlightModel();
 		PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
 		flight.setPilot(pilot);
-		
 		model.addAttribute("flight", flight);
+		System.out.println(pilot.getName());
 		return "addFlight";
 	}
 	
 	@RequestMapping(value = "/flight/add", method = RequestMethod.POST)
 	private String addFlightSubmit(@ModelAttribute FlightModel flight) {
 		flightService.addFlight(flight);
+		System.out.println(flight.getDestination());
+		System.out.println(flight.getFlightNumber());
 		return "add";
 	}
 }

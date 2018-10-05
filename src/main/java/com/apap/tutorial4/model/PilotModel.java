@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "pilot")
-public class PilotModel {
+public class PilotModel implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
